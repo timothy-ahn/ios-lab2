@@ -1,10 +1,30 @@
-import 'package:lab2/account.dart';
 import 'dart:io';
+
+import 'package:lab2/book.dart';
+import 'package:lab2/library.dart';
+
+import '../lib/account.dart';
 
 Account account = Account("", "", 0);
 
 void main(List<String> arguments) {
   // task1();
+  task2();
+}
+
+void task2() {
+  var library = Library();
+  var book = Book(
+      "Harry Potter and the Philosopher's Stone", "Joanne Rowling", 1997, 223);
+
+  library.addBook(book);
+  library.addBook(Book("The Night Circus", "Erin Morgenstern", 2011, 387));
+  library.addBook(Book(
+      "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 2014, 443));
+  library.addBook(Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, 180));
+  library.removeBook(book);
+
+  library.display();
 }
 
 void task1() {
